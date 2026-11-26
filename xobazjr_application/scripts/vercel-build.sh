@@ -17,6 +17,10 @@ if ! command -v flutter >/dev/null 2>&1 || ! flutter --version 2>/dev/null | gre
     --output "${ARCHIVE}"
   tar -xf "${ARCHIVE}" -C "${FLUTTER_DIR}" --strip-components=1
   rm -f "${ARCHIVE}"
+  # Vercel's build process may run as root while the extracted SDK files have
+  # a different owner. Flutter invokes Git inside its SDK and needs this path
+  # to be explicitly trusted in that environment.
+  git config --global --add safe.directory "${FLUTTER_DIR}"
   export PATH="${FLUTTER_DIR}/bin:${PATH}"
 fi
 
