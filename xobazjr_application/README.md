@@ -1,17 +1,19 @@
 # xobazjr_application
 
-A new Flutter project.
+Flutter application with a web build configured for Vercel.
 
-## Getting Started
+## Deploy to Vercel
 
-This project is a starting point for a Flutter application.
+Import this GitHub repository in Vercel and set the **Root Directory** to
+`xobazjr_application`. The checked-in `vercel.json` installs the pinned Flutter
+SDK, builds the web app, serves `build/web`, and routes client-side paths to
+Flutter's `index.html`.
 
-A few resources to get you started if this is your first Flutter project:
+The web build currently has no external service credentials or environment
+variables configured. Add Vercel environment variables if the app starts using
+private services or build-time configuration.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Local development
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Flutter documentation](https://docs.flutter.dev/)
+- [Flutter web deployment](https://docs.flutter.dev/deployment/web)
